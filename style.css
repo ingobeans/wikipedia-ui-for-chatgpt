@@ -1,15 +1,26 @@
 :root {
-    
+    font-family: 'Linux Libertine O', sans-serif;
 }
 body {
     margin: 0px;
     overflow-x: hidden;
 }
 
+.sidebar-link {
+    padding-bottom: 6px;
+}
+
+.sidebar-header {
+    padding-top:10px;
+    text-decoration: underline;
+    color: #797c80;
+    text-decoration-style: dashed;
+}
+
 #sidebar-container {
     background-color: #f6f6f6;
     height:100vh;
-    width: 150px;
+    width: 190px;
     position: absolute;
     border-right-width: 1px;
     border-right-color: #a7d7f9;
@@ -17,12 +28,14 @@ body {
 }
 
 #sidebar {
-    margin: 5px 10px;
+    margin: 5px 30px;
+    display: grid;
 }
 
 #main-container {
     overflow-y: scroll;
     overflow-x: hidden;
+    padding-left: 190px;
 }
 
 #topbar {
@@ -34,7 +47,6 @@ body {
     border-bottom-width: 1px;
     border-bottom-color: #a7d7f9;
     border-bottom-style: solid;
-    padding-left: 150px;
     display: flex;
 }
 
@@ -47,6 +59,7 @@ body {
     width: 140px;
     height: 150px;
     display: block;
+    margin-bottom: 33px;
 }
 
 #topbar-right {
@@ -56,8 +69,8 @@ body {
 }
 
 #content-container {
-    padding-left: 175px;
-    height: calc(100vh - 102px)
+    height: calc(100vh - 102px);
+    padding-left: 40px;
 }
 
 #content-title {
