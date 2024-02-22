@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
-import gpt, re, html
+import re, html
+from . import gpt
 
 app = Flask(__name__)
 

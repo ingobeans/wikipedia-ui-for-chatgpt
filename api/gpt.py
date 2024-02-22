@@ -5,6 +5,8 @@ model = "gpt-3.5-turbo"
 
 def get_resp(messages:list[dict],temperature:float=0.7,frequency_penalty:float=0.7,presence_penalty:float=0.7) -> str:
     url = "https://chat.mindtastik.com/php/api.php"
+    for m in messages:
+        m["content"] = m["content"].replace("'!","!").replace("\"!","!").replace("+"," PLUS ")
     messages_text = json.dumps(messages)
     headers = {
         "Host": "chat.mindtastik.com",
@@ -25,7 +27,7 @@ def get_resp(messages:list[dict],temperature:float=0.7,frequency_penalty:float=0
     data = {
         "array_chat": messages_text,
         "employee_name": "AI Chatbot Pro",
-        "model": model,
+        "model": "gpt-3.5-turbo-0613", #model doesn't actually matter, website overwrites anyways to always be gpt-3.5-turbo-0613, so don't bother changing this to gpt-4 for free access,
         "temperature": temperature,
         "frequency_penalty": frequency_penalty,
         "presence_penalty": presence_penalty,
